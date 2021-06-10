@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>NOME DELL'APP</title>
-</head>
-<body>
-    <!--CODE GOES HERE-->
-</body>
+<!--W3.css reference: https://www.w3schools.com/w3css/w3css_references.asp-->
 
+<head>
+    <!--FLASK HEAD HTML BLOCK INHERTIANCE-->
+    {% block head%}
+    <!--JQUERY GOOGLE CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--W3.CSS RWD FRAMEWORK FOR STYLE-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--VIEWPORT FOR DEVICE SCALING-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--RESERVED TO JS SCRIPTS-->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <!--OTHERS-->
+    <meta charset="UTF-8">
+    {% endblock %}
+</head>
+
+<body>
+    <!--FLASK BODY HTML BLOCK INHERTIANCE-->
+    {% block body %}
+    <div class="w3-top w3-bar w3-amber w3-text-black">
+        <!-- Prepare il JS associato qui , possibile JQuery/ajax e redirect di flask-->
+        <a href="#home" class="w3-bar-item w3-button">Home</a>
+    </div>
+    {% endblock %}
+</body>
 
 </html>
