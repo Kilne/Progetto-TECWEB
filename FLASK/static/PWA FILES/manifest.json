@@ -1,10 +1,9 @@
 {
-    "name": "Time is APP",
+  "name": "Time is APP",
   "short_name": "TAPP",
-  "start_url": "",
-  "display": "",
+  "start_url": "./Main.html",
+  "display": "fullscreen",
   "background_color": "",
   "description": "Time constraint projects organizer",
-  "icons": [{}],
   "theme_color": ""
 }
