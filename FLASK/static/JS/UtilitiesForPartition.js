@@ -1,4 +1,4 @@
-export class ProjectStub {
+class ProjectStub {
     constructor(name, numberTotalToDivide, numberDivideValues) {
         this.totalToDive = numberTotalToDivide;
         this.divideValue = numberDivideValues;
@@ -43,4 +43,6 @@ export class ProjectStub {
         }
     }
 }
+
+
 
