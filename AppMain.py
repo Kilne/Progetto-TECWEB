@@ -1,21 +1,17 @@
-from flask import Flask, session, redirect, render_template, url_for, request
-import mimetypes
+from flask import Flask, render_template
 
-mimetypes.add_type('application/javascript', '.js')
-
-
-app = Flask(__name__, template_folder="FLASK/templates", static_folder="FLASK/static")
+app = Flask(__name__)
 
 
 # Main session page
 @app.route("/")
 def home():
-    return render_template('./Main.html')
+    return render_template('Main.html')
 
 
 @app.route("/test")
 def test():
-    return render_template('./Testing.html')
+    return render_template('Testing.html')
 
 
 # Page started in debug modify after
