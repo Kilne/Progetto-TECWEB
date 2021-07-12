@@ -1,15 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
 
 # Main session page
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def home():
     return render_template('Main.html')
 
 
-@app.route("/test")
+@app.route("/test", methods=['GET', 'POST'])
 def test():
     return render_template('Testing.html')
 

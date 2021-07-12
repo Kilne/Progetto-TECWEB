@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% block headof %}
     <!--JQUERY GOOGLE CDN-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--BOOTSTRAP RWD FRAMEWORK FOR STYLE-->
@@ -15,9 +16,11 @@
     <!--OTHERS-->
     <meta charset="UTF-8">
     <title>TIME IS APP</title>
+    {% endblock %}
 </head>
 
 <body style="background-color: darkslategrey">
+{% block content %}
 <!--BOOTSTRAP JS LIBRARY CDN -->
 <script crossorigin="anonymous"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -25,10 +28,10 @@
 
 <!--NAVBAR-->
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: gold">
-    <a class="nav-link active text-dark" href=Main.html>Home</a>
-    <a class="nav-link text-dark" href=Testing.html>Testing</a>
+    <a class="nav-link active text-dark h5" href="/">Home</a>
+    <a class="nav-link text-dark h5" href="test">Testing</a>
 </nav>
-
+{% endblock %}
 </body>
 
 </html>
