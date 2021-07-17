@@ -36,33 +36,16 @@
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    <a class="nav-link" href="/test">Testing</a>
+                    <a class="nav-link" href="">Testing</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <script>
-        //@TODO: forse ci vuole AJAX?MA come se il backend lo carica?
-        $(document).ready(function () {
-            $(".active").click(function () {
-                $(".active").removeClass("active");
-            })
-
-        })
-
-        {#$(function(){
-            $(".nav-link").click(function (){
-                if (!$(this).hasClass(".active")){
-                    $(".nav-link").filter(".active",function (){
-                        $(this).removeClass(".active").removeAttr("aria-current");
-                    })
-                    $(this).addClass(".active").attr("aria-current","page");
-                }
-            })
-        });#}
+    <!--REDIRECT FROM FLASK BACKEND-->
+    <script type="text/javascript" id="TestingRedirect">
+        //@TODO: da fare il redirect alla pagina di testing con Jquery/ajax
     </script>
-
     <!--BOOTSTRAP JS LIBRARY CDN -->
     <script crossorigin="anonymous"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

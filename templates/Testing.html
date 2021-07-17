@@ -1,13 +1,15 @@
 {% extends "Main.html" %}
 {% block headof %}
-{{super()}}
+    {{ super() }}
 {% endblock %}
 {% block content %}
-{{super()}}
-<div>
-    <h1>Page testing</h1>
-</div>
-// import keyword is not needed flask does it by himself
+    {{ super() }}
+    <div>
+        <h1>Page testing</h1>
+    </div>
+
+
+    {#// import keyword is not needed flask does it by himself
 <script src="../static/JS/UtilitiesForPartition.js"></script>
-<script src="../static/JS/test.js"></script>
+<script src="../static/JS/test.js"></script>#}
 {% endblock %}
