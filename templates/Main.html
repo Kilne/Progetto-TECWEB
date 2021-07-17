@@ -2,35 +2,73 @@
 <html lang="en">
 <head>
     {% block headof %}
-    <!--JQUERY GOOGLE CDN-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--BOOTSTRAP RWD FRAMEWORK FOR STYLE-->
-    <link crossorigin="anonymous"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-          rel="stylesheet">
-    <!--VIEWPORT FOR DEVICE SCALING-->
-    <meta content="width=device-width,initial-scale=1" name="viewport">
-    <!--RESERVED TO JS SCRIPTS-->
+        <!--JQUERY GOOGLE CDN-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--BOOTSTRAP RWD FRAMEWORK FOR STYLE-->
+        <link crossorigin="anonymous"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+              rel="stylesheet">
+        <!--VIEWPORT FOR DEVICE SCALING-->
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <!--RESERVED TO JS SCRIPTS-->
 
-    <!--OTHERS-->
-    <meta charset="UTF-8">
-    <title>TIME IS APP</title>
+        <!--OTHERS-->
+        <meta charset="UTF-8">
+        <title>TIME IS APP</title>
     {% endblock %}
 </head>
 
 <body style="background-color: darkslategrey">
 {% block content %}
-<!--BOOTSTRAP JS LIBRARY CDN -->
-<script crossorigin="anonymous"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-md navbar-light bg-warning">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-alarm-fill d-inline-block align-baseline" style="font-size: 1.2rem">
+                </i>
+                TIME IS APP
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+                    aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/test">Testing</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-<!--NAVBAR-->
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: gold">
-    <a class="nav-link active text-dark h5" href="/">Home</a>
-    <a class="nav-link text-dark h5" href="test">Testing</a>
-</nav>
+    <script>
+        //@TODO: forse ci vuole AJAX?MA come se il backend lo carica?
+        $(document).ready(function () {
+            $(".active").click(function () {
+                $(".active").removeClass("active");
+            })
+
+        })
+
+        {#$(function(){
+            $(".nav-link").click(function (){
+                if (!$(this).hasClass(".active")){
+                    $(".nav-link").filter(".active",function (){
+                        $(this).removeClass(".active").removeAttr("aria-current");
+                    })
+                    $(this).addClass(".active").attr("aria-current","page");
+                }
+            })
+        });#}
+    </script>
+
+    <!--BOOTSTRAP JS LIBRARY CDN -->
+    <script crossorigin="anonymous"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--BOOTSTRAP ICON SET-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 {% endblock %}
 </body>
 
