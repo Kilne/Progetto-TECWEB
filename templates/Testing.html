@@ -14,6 +14,28 @@
             $("#testing").addClass("active").attr("aria-current", "page");
         })
     </script>
+
+    <!-- Accordino per schede-->
+    {#    @TODO: da fare il css per <accordion> e forse per nav pure #}
+    <div class="container-lg align-content-start" id="accordionContainer">
+        <div class="accordion>" id="schede">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="scheda1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#header1"
+                            aria-expanded="false" aria-controls="header1">
+                        Scheda 1
+                    </button>
+                </h2>
+                <div class="accordion-collapse collapse" id="header1" aria-labelledby="scheda1">
+                    <div class="accordion-body" id="testo">
+                        lorem ipsum
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     {#// import keyword is not needed flask does it by himself
 <script src="../static/JS/UtilitiesForPartition.js"></script>
 <script src="../static/JS/test.js"></script>#}
