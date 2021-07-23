@@ -1,4 +1,16 @@
+/*Gradiente lineare per il body*/
 body {
     height: 100vh;
     background: linear-gradient(95deg, rgba(6, 42, 18, 0.97), rgba(6, 64, 3, 0.86));
+}
+
+/*Il CSS di bootsrap può essere sovrascritto anche nelle singole proprietà e mantenedo le altre*/
+/*@TODO: Finire il css per l'accordion */
+.accordion-button {
+    background-color: darkorange;
+}
+
+.accordion-button:not(.collapsed) {
+    color: black;
+    background-color: darkorange;
 }
