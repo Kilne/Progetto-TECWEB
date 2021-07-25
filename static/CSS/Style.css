@@ -5,12 +5,15 @@ body {
 }
 
 /*Il CSS di bootsrap può essere sovrascritto anche nelle singole proprietà e mantenedo le altre*/
-/*@TODO: Finire il css per l'accordion */
 .accordion-button {
-    background-color: darkorange;
+    background-color: #ffc107;
 }
 
 .accordion-button:not(.collapsed) {
     color: black;
-    background-color: darkorange;
+    background-color: rgba(255, 193, 7, 0.73);
+}
+
+.accordion-collapse {
+    background: rgba(255, 193, 7, 0.39);
 }
