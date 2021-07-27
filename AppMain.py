@@ -1,12 +1,6 @@
 from flask import render_template, Flask
-from pymongo import MongoClient
 
 app = Flask(__name__)
-
-# connecting DB
-app.config['MONGO_URI'] = "mongodb://127.0.0.1:5000/app_db"
-mongodb_client = MongoClient(app)
-db = mongodb_client.db
 
 
 # Main session page
