@@ -4,13 +4,13 @@ app = Flask(__name__)
 
 
 # Main session page
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/")
 def home():
     return render_template('Main.html')
 
 
 # test page
-@app.route("/test", methods=['GET', 'POST'])
+@app.route("/test/")
 def test():
     return render_template('Testing.html')
 
