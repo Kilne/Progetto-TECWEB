@@ -2,7 +2,7 @@ export function stepCreator(singleStepValue, valueToPartition) {
     //Checking value to partition
     try {
         if (typeof (valueToPartition) != "number") {
-            throw "Inconsistet value to partition";
+            throw "Inconsistent value to partition";
         }
     } catch (err) {
         return "An error has occurred: " + err;
@@ -14,7 +14,7 @@ export function stepCreator(singleStepValue, valueToPartition) {
 
     switch (typeof (singleStepValue)) {
         case "number":
-            while (breakPoint != valueToPartition) {
+            while (breakPoint !== valueToPartition) {
                 arraySteps.push(singleStepValue);
                 breakPoint += singleStepValue;
             }
@@ -28,7 +28,7 @@ export function stepCreator(singleStepValue, valueToPartition) {
             }
             //Extra array for returning the result
             let extraArray = [];
-            if (arraySteps.length == 3) {
+            if (arraySteps.length === 3) {
                 for (let index = 0; index < arraySteps[2]; index++) {
                     extraArray.push(arraySteps[0]);
                 }

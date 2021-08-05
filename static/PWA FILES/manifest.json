@@ -1,0 +1,43 @@
+{
+  "name": "Time is APP",
+  "short_name": "TIA",
+  "description": "Manage your personal projects",
+  "lang": "it-IT",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#ffc107",
+  "background_color": "#044b09",
+  "icons": [
+    {
+      "src": "Manifest Icons/32px-Antu_alarm-clock.svg.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "Manifest Icons/64px-Antu_alarm-clock.svg.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "Manifest Icons/128px-Antu_alarm-clock.svg.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "Manifest Icons/256px-Antu_alarm-clock.svg.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "Manifest Icons/512px-Antu_alarm-clock.svg.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "Manifest Icons/Antu_alarm-clock.svg",
+      "sizes": "150x150",
+      "type": "image/svg"
+    }
+  ]
+}
