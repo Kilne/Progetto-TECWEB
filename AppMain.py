@@ -1,6 +1,8 @@
 from flask import render_template, Flask
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 
 # Main session page

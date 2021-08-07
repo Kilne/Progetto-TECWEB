@@ -1,7 +1,11 @@
 {% extends "Main.html" %}
-{% block headof %}
-    {{ super() }}
-{% endblock %}
+<html>
+<head>
+    {% block headof %}
+        {{ super() }}
+    {% endblock %}
+</head>
+<body>
 {% block content %}
     {{ super() }}
     <div>
@@ -41,3 +45,5 @@
 <script src="../static/JS/UtilitiesForPartition.js"></script>
 <script src="../static/JS/test.js"></script>#}
 {% endblock %}
+</body>
+</html>
