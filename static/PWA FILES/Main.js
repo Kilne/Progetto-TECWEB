@@ -1,4 +1,4 @@
-// @TODO: VEDERE CHE FARE CON STO WORKER NON NE VUOLE SAPERE
+// DEPRECATO NESSUNA SOLUZIONE PER L'IMPLEMENTAZIONE DEL SERVICE WORKER
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
         navigator.serviceWorker.register('static/PWA FILES/sw.js').then(function (registration) {
