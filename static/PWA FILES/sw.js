@@ -1,6 +1,6 @@
 let cacheName = "TAPP_CACHE"
 let filesToCache = [
-    "/static/Main.js",
+    "/static/JS/Main.js",
     "/static/CSS/Style.css",
     "/template/Main.html",
     "/template/Testing.html",
