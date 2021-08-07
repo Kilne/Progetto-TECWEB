@@ -1,6 +1,7 @@
+//DEPRECATO NESSUNA SOLUZIONE PER IMPLEMENTARE IL SERVICE WORKER
+
 let cacheName = "TAPP_CACHE"
 let filesToCache = [
-    "/static/JS/Main.js",
     "/static/CSS/Style.css",
     "/template/Main.html",
     "/template/Testing.html",
