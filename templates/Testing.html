@@ -1,24 +1,14 @@
 {% extends "Main.html" %}
-<html>
-<head>
-    {% block headof %}
-        {{ super() }}
-    {% endblock %}
-</head>
-<body>
-{% block content %}
-    {{ super() }}
-    <div>
-        <h1>Page testing</h1>
-    </div>
-    <!--SWITCHING ARIA CURRENT AND ACTIVE CLASS-->
-    <script type="text/javascript">
-        $(function () {
-            $(".active").removeAttr("aria-current").removeClass("active");
-            $("#testing").addClass("active").attr("aria-current", "page");
-        })
-    </script>
 
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block navbar %}
+    {{ super() }}
+    <div class="container-lg">
+        <h1 style="color: #ffc107;text-align: center">Page testing</h1>
+    </div>
     <!-- Accordion per schede-->
     {#    @TODO: da fare il css per <accordion> e forse per nav pure #}
     <div class="container-lg align-content-start" id="accordionContainer">
@@ -38,12 +28,16 @@
                 </div>
             </div>
         </div>
-
     </div>
 
+    <!--SWITCHING ARIA CURRENT AND ACTIVE CLASS-->
+    <script type="text/javascript">
+        $(function () {
+            $(".active").removeAttr("aria-current").removeClass("active");
+            $("#testing").addClass("active").attr("aria-current", "page");
+        })
+    </script>
     {#// import keyword is not needed flask does it by himself
 <script src="../static/JS/UtilitiesForPartition.js"></script>
 <script src="../static/JS/test.js"></script>#}
 {% endblock %}
-</body>
-</html>
