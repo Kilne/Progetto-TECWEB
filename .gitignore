@@ -114,3 +114,4 @@ dmypy.json
 .pyre/
 /.idea/
 /Server.run/Flask (AppMain.py).run.xml
+/flaskserver.run/
