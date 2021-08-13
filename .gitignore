@@ -112,6 +112,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#Luca gitignore addings
 /.idea/
 /Server.run/Flask (AppMain.py).run.xml
 /.run/
+/static/CSS/BOOTSTRAP5CSS/
+/static/JS/BOOTSRAP5JS/

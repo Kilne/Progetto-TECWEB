@@ -15,14 +15,15 @@ env = Environment(autoescape=select_autoescape(
 # MongoDB atlas connection client
 clientDB = MongoClient("mongodb+srv://Luca:WliL3VbEqdbl5VAX@clusterprogetto.0ocor.mongodb.net/ClusterProgetto"
                        "?retryWrites=true&w=majority", ssl=True, ssl_cert_reqs='CERT_NONE')
-dbObject = clientDB.ClusterProgetto
-collectionTest = dbObject.CollTest
-post = {
-    "author": "Luca",
-    "test": "yes"
-}
-id_inserted = collectionTest.insert_one(post).inserted_id
-print(id_inserted)
+# @TODO: VEDERE PERCHè STAMPA DUE VOLTE
+# dbObject = clientDB.ClusterProgetto
+# collectionTest = dbObject.CollTest
+# post = {
+#     "author": "Luca",
+#     "test": "yes"
+# }
+# id_inserted = collectionTest.insert_one(post).inserted_id
+# print(id_inserted)
 
 
 # Main page
