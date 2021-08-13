@@ -1,7 +1,7 @@
 /*Gradiente lineare per il body*/
 body {
     height: 100vh;
-    background: darkgreen;
+    background: var(--bs-gray-dark);
 }
 
 /*Il CSS di bootsrap può essere sovrascritto anche nelle singole proprietà e mantenendo le altre*/
