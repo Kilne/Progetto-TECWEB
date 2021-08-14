@@ -47,6 +47,7 @@
                     <div class="navbar-nav">
                         <a class="nav-link active" id="home" aria-current="page" href="/">HOME</a>
                         <a class="nav-link" id="testing" href="/test/">TESTPAGE</a>
+                        <a class="nav-link" id="userspace" href="/user/">MY PROJECTS</a>
                     </div>
                 </div>
             </div>
@@ -68,7 +69,7 @@
 {% block footer %}
     <!--FOOTER WITH BOOTSTRAP CONTANIERS-->
 {#    https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page#}
-    <footer class="mt-auto" style="background-color: var(--bs-yellow)">
+    <footer class="mt-auto bg-warning">
         <div class="container text-black">
             <h4>Footer qui</h4>
         </div>
@@ -82,6 +83,12 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <!--BOOTSTRAP ICON SET-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!--JS SCRIPTS RESERVED-->
+    <script type="text/javascript">
+        window.onload = function () {
+            let ariaElement  //@todo: trovare il modo di prender l'aria current e cambiarlo
+        }
+    </script>
 {% endblock %}
 </body>
 

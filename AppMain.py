@@ -38,6 +38,12 @@ def test():
     return render_template('Testing.html')
 
 
+# user page
+@app.route("/user/")
+def user():
+    return render_template('UserProject.html')
+
+
 # Page started in debug modify after
 if __name__ == "__main__":
     app.run("127.0.0.1", 5000, debug=True)
