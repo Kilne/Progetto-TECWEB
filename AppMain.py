@@ -44,6 +44,6 @@ def user():
     return render_template('UserProject.html')
 
 
-# Page started in debug modify after
+# Page started in debug modify after, for Pycharm check the IDE launch config
 if __name__ == "__main__":
     app.run("127.0.0.1", 5000, debug=True)

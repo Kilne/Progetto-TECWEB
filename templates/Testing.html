@@ -22,13 +22,6 @@
 
 {% block bootstrapJS %}
     {{ super() }}
-    <!--SWITCHING ARIA CURRENT AND ACTIVE CLASS-->
-    <script type="text/javascript">
-        $(function () {
-            $(".active").removeAttr("aria-current").removeClass("active");
-            $("#testing").addClass("active").attr("aria-current", "page");
-        })
-    </script>
     {#// import keyword is not needed flask does it by himself
 <script src="../static/JS/UtilitiesForPartition.js"></script>
 <script src="../static/JS/test.js"></script>#}
