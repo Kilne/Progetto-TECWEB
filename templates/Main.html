@@ -86,7 +86,17 @@
     <!--JS SCRIPTS RESERVED-->
     <script type="text/javascript">
         window.onload = function () {
-            let ariaElement  //@todo: trovare il modo di prender l'aria current e cambiarlo
+            let currentAddress = window.location.href;
+            let currentAriaElement = document.querySelector("a.nav-link.active");
+            let newCurrentAriaElement;
+            //@todo: finire questa funzione anzichè contare gli slash confronta le stringhe e fai un file separato
+            [...currentAddress].forEach(addressChar => {
+                if (addressChar == '/') slashNumbers++;
+            });
+
+            currentAriaElement.classList.remove("active");
+            currentAriaElement.removeAttribute("aria-current");
+            console.log(currentAddress);
         }
     </script>
 {% endblock %}
