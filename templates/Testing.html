@@ -1,49 +1,29 @@
 {% extends "Main.html" %}
-<html>
-<head>
-    {% block headof %}
-        {{ super() }}
-    {% endblock %}
-</head>
-<body>
-{% block content %}
+
+{% block head %}
     {{ super() }}
-    <div>
-        <h1>Page testing</h1>
+{% endblock %}
+
+{% block navbar %}
+    {{ super() }}
+{% endblock %}
+
+{% block main %}
+    <div class="container-lg">
+        <h1 style="color: #ffc107;text-align: center">Page testing</h1>
     </div>
-    <!--SWITCHING ARIA CURRENT AND ACTIVE CLASS-->
-    <script type="text/javascript">
-        $(function () {
-            $(".active").removeAttr("aria-current").removeClass("active");
-            $("#testing").addClass("active").attr("aria-current", "page");
-        })
-    </script>
+{% endblock %}
 
-    <!-- Accordion per schede-->
-    {#    @TODO: da fare il css per <accordion> e forse per nav pure #}
-    <div class="container-lg align-content-start" id="accordionContainer">
-        <div class="accordion>" id="schede">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="scheda1">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#header1"
-                            aria-expanded="false" aria-controls="header1">
-                        Scheda 1
-                    </button>
-                </h2>
-                <div class="accordion-collapse collapse" id="header1" aria-labelledby="scheda1">
-                    <div class="accordion-body" id="testo">
-                        lorem ipsum
-                    </div>
-                </div>
-            </div>
-        </div>
 
-    </div>
 
+{% block footer %}
+    {{ super() }}
+{% endblock %}
+
+{% block bootstrapJS %}
+    {{ super() }}
     {#// import keyword is not needed flask does it by himself
 <script src="../static/JS/UtilitiesForPartition.js"></script>
 <script src="../static/JS/test.js"></script>#}
+
 {% endblock %}
-</body>
-</html>
