@@ -11,19 +11,11 @@ env = Environment(autoescape=select_autoescape(
     default_for_string=True,
 ))
 
+
 # connessione funziona anche se senza SSL , capire perchè stampa due volte l'ID
 # MongoDB atlas connection client
-clientDB = MongoClient("mongodb+srv://Luca:WliL3VbEqdbl5VAX@clusterprogetto.0ocor.mongodb.net/ClusterProgetto"
-                       "?retryWrites=true&w=majority", ssl=True, ssl_cert_reqs='CERT_NONE')
-# @TODO: VEDERE PERCHè STAMPA DUE VOLTE
-# dbObject = clientDB.ClusterProgetto
-# collectionTest = dbObject.CollTest
-# post = {
-#     "author": "Luca",
-#     "test": "yes"
-# }
-# id_inserted = collectionTest.insert_one(post).inserted_id
-# print(id_inserted)
+# clientDB = MongoClient("mongodb+srv://Luca:WliL3VbEqdbl5VAX@clusterprogetto.0ocor.mongodb.net/ClusterProgetto"
+#                        "?retryWrites=true&w=majority", ssl=True, ssl_cert_reqs='CERT_NONE')
 
 
 # Main page

@@ -12,6 +12,7 @@
     <div class="container-lg">
         <h1 style="color: #ffc107;text-align: center">Page testing</h1>
     </div>
+
 {% endblock %}
 
 
@@ -25,5 +26,14 @@
     {#// import keyword is not needed flask does it by himself
 <script src="../static/JS/UtilitiesForPartition.js"></script>
 <script src="../static/JS/test.js"></script>#}
+
+    <script type="application/javascript">
+        window.addEventListener("load", function () {
+            let main_tag = document.getElementsByTagName("main");
+            for (let mainTagElement of main_tag) {
+                console.log(mainTagElement);
+            }
+        });
+    </script>
 
 {% endblock %}
