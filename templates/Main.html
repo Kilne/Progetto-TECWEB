@@ -34,12 +34,13 @@
         <!--NAVBAR-->
         <nav class="navbar navbar-expand-md navbar-light bg-warning">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" href="{{ url_for("home") }}">
                     <i class="bi bi-alarm-fill d-inline-block align-baseline" style="font-size: 1.2rem">
                     </i>
                     TIME IS APP
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggler"
                         aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -71,9 +72,13 @@
     {% endblock %}
 </main>
 
+{% block body %}
+
+{% endblock %}
+
 {% block footer %}
     <!--FOOTER WITH BOOTSTRAP CONTANIERS-->
-{#    https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page#}
+    {#    https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page#}
     <footer class="mt-auto bg-warning">
         <div class="container text-black">
             <h4>Footer qui</h4>
