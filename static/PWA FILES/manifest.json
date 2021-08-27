@@ -7,7 +7,7 @@
   "display": "standalone",
   "orientation": "any",
   "theme_color": "#ffc107",
-  "background_color": "#044b09",
+  "background_color": "#343a40",
   "icons": [
     {
       "src": "Manifest Icons/32px-Antu_alarm-clock.svg.png",

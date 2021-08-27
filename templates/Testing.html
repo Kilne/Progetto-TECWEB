@@ -1,12 +1,9 @@
 {% extends "Main.html" %}
-{# blocco head richiama elementi precendti #}
-{% block head %}
-    {{ super() }}
+{# blocco tile #}
+{% block title %}
+    Testing
 {% endblock %}
-{# blocco header richiama la navbar#}
-{% block navbar %}
-    {{ super() }}
-{% endblock %}
+
 {#blocco main , non richiamo gli elementi#}
 {% block main %}
     <h3 class="text-warning text-lg-center align-content-center">
@@ -39,16 +36,12 @@
         </div>
     </div>
 {% endblock %}
-{#blocco footer richiamo gli elementi#}
-{% block footer %}
-    {{ super() }}
-{% endblock %}
-{#blocco script boostrap e JS richiamo gli elementi #}
-{% block bootstrapJS %}
-    {{ super() }}
+
+{#blocco script JS richiamo gli elementi #}
+{% block scriptJS %}
     <script src="../static/JS/ACCORDIONJS/AccordionFunction.js">
     </script>
     <script src="../static/JS/ACCORDIONJS/ExecuteAccordion.js">
-
     </script>
 {% endblock %}
+
