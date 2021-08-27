@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    {% block head %}
         <!--JQUERY GOOGLE CDN-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!--BOOTSTRAP RWD FRAMEWORK FOR STYLE-->
@@ -14,50 +13,53 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="application-name" content="TIA">
-        <meta name="apple-mobile-web-app-title" content="TIA">
-        <meta name="theme-color" content="#ffc107">
-        <meta name="msapplication-navbutton-color" content="ffc107">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="msapplication-starturl" content="{{ url_for("home") }}">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!--CSS-->
-        <link rel="stylesheet" href="../static/CSS/Style.css">
-        <!--OTHERS-->
-        <meta charset="UTF-8">
-        <title>TIME IS APP</title>
-    {% endblock %}
+    <meta name="apple-mobile-web-app-title" content="TIA">
+    <meta name="theme-color" content="#ffc107">
+    <meta name="msapplication-navbutton-color" content="ffc107">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="{{ url_for("home") }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--CSS-->
+    <link rel="stylesheet" href="../static/CSS/Style.css">
+    <!--OTHERS-->
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            TIME IS APP
+        {% endblock %}
+    </title>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
 <header>
-    {% block navbar %}
-        <!--NAVBAR-->
-        <nav class="navbar navbar-expand-md navbar-light bg-warning">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url_for("home") }}">
-                    <i class="bi bi-alarm-fill d-inline-block align-baseline" style="font-size: 1.2rem">
-                    </i>
-                    TIME IS APP
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarToggler"
-                        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarToggler">
-                    <div class="navbar-nav">
-                        {#
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-md navbar-light bg-warning">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for("home") }}">
+                <i class="bi bi-alarm-fill d-inline-block align-baseline" style="font-size: 1.2rem">
+                </i>
+                TIME IS APP
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggler"
+                    aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <div class="navbar-nav">
+                    {#
                             A quanto pare è assolutamente consigliato usare l'url_for (anche senza l'import in flask)
                             senza di quello con il normale /route l'ide crede di stare cercando un file ed alza warning
                             anche se poi funziona comunque, probabilemnte è dovuto a Jinja2 che incorpora l'url_for.
                         #}
-                        <a class="nav-link" id="/" href="{{ url_for("home") }}">HOME</a>
-                        <a class="nav-link" id="/test/" href="{{ url_for("test") }}">TESTPAGE</a>
-                        <a class="nav-link" id="/user/" href="{{ url_for("user") }}">MY PROJECTS</a>
-                    </div>
+                    <a class="nav-link" id="/" href="{{ url_for("home") }}">HOME</a>
+                    <a class="nav-link" id="/test/" href="{{ url_for("test") }}">TESTPAGE</a>
+                    <a class="nav-link" id="/user/" href="{{ url_for("user") }}">MY PROJECTS</a>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
+    {% block header %}
 
     {% endblock %}
 </header>
@@ -76,26 +78,26 @@
 
 {% endblock %}
 
-{% block footer %}
-    <!--FOOTER WITH BOOTSTRAP CONTANIERS-->
-    {#    https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page#}
-    <footer class="mt-auto bg-warning">
-        <div class="container text-black">
-            <h4>Footer qui</h4>
-        </div>
-    </footer>
-{% endblock %}
+<!--FOOTER WITH BOOTSTRAP CONTANIERS-->
+{#    https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page#}
+<footer class="mt-auto bg-warning">
+    <div class="container text-black">
+        <h4>Footer qui</h4>
+    </div>
+</footer>
 
-{% block bootstrapJS %}
-    <!--BOOTSTRAP JS LIBRARY CDN -->
-    <script crossorigin="anonymous"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!--BOOTSTRAP ICON SET-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <!--JS SCRIPTS RESERVED-->
-    <script src="../static/JS/AriaChanger.js">
-    </script>
+
+<!--BOOTSTRAP JS LIBRARY CDN -->
+<script crossorigin="anonymous"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<!--BOOTSTRAP ICON SET-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<!--JS SCRIPTS RESERVED-->
+<script src="../static/JS/AriaChanger.js">
+</script>
+{% block scriptJS %}
+
 {% endblock %}
 </body>
 
