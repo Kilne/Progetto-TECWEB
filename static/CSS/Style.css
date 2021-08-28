@@ -17,3 +17,8 @@ body {
 .accordion-collapse {
     background: rgba(255, 193, 7, 0.39);
 }
+
+div.bodie {
+    border-radius: 5px;
+    padding: 20px;
+}
