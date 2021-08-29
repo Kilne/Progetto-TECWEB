@@ -119,3 +119,4 @@ dmypy.json
 /.run/
 /static/CSS/BOOTSTRAP5CSS/
 /static/JS/BOOTSRAP5JS/
+/Server.run/

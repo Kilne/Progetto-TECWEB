@@ -13,35 +13,23 @@
 {#blocco body interno#}
 {% block body %}
 
-    <div id="test">
+    {# @TODO: finire qui #}
+    <div class="container-lg border-1 border-warning" id="test">
+        <div class="row row-cols-auto align-items-center gx-2" id="showcase">
 
-    </div>
-
-    <div class="container-lg align-content-start" id="accordionContainer">
-        <div class="accordion accordion-flush" id="schede">
-            {#  <div class="accordion-item">
-                <h2 class="accordion-header" id="scheda1">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#header1"
-                            aria-expanded="false" aria-controls="header1">
-                        Scheda 1
-                    </button>
-                </h2>
-                <div class="accordion-collapse collapse" id="header1" aria-labelledby="scheda1">
-                    <div class="accordion-body" id="testo">
-                        lorem ipsum
-                    </div>
-                </div>
-            </div>#}
         </div>
     </div>
+
+
 {% endblock %}
 
 {#blocco script JS richiamo gli elementi #}
 {% block scriptJS %}
-    <script src="../static/JS/ACCORDIONJS/AccordionFunction.js">
+    <script src="../static/JS/DynamicHtmlJS/CardCreator.js">
     </script>
-    <script src="../static/JS/ACCORDIONJS/ExecuteAccordion.js">
+    <script src="../static/JS/DynamicHtmlJS/DynamicAdding.js">
+    </script>
+    <script src="../static/JS/DynamicHtmlJS/ExecuteAccordion.js">
     </script>
 {% endblock %}
 

@@ -1,3 +1,3 @@
 console.log("main start");
-Creator(4);
+Creator(1);
 console.log("main finished");
