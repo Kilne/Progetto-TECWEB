@@ -2,10 +2,13 @@ function Creator(Number) {
     console.log("Replication script starting")
     const anchoredElem = document.querySelector("#showcase");
 
-    const card = cardCreator("test title", "text", "/");
-
-    anchoredElem.appendChild(card);
-    //@TODO: creare un certo numero di schede per test
+    for (let i = 0; i < Number; i++) {
+        let col = document.createElement("div");
+        col.classList.add("col");
+        col.id = "scheda: " + i;
+        col.append(cardCreator("test title", "text", "/"));
+        anchoredElem.appendChild(col);
+    }
 
     console.log("finished");
 }
