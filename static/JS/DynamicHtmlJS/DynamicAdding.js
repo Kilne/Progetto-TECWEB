@@ -6,7 +6,7 @@ function Creator(Number) {
         let col = document.createElement("div");
         col.classList.add("col");
         col.id = "scheda: " + i;
-        col.append(cardCreator("test title", "text", "/"));
+        col.append(cardCreator("test title", "text", "home"));
         anchoredElem.appendChild(col);
     }
 

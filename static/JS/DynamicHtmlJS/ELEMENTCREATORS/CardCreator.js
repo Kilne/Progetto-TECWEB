@@ -12,11 +12,11 @@ function cardCreator(CardTitle, CardText, BtnLink) {
     paragraph.id = "cardText";
     buttonLink.id = "cardButton";
 
-    outerDiv.classList.add("card");
-    outerDiv.classList.add("border-dark");
+    outerDiv.classList.add("card", "border-dark");
 
-    innerDiv.classList.add("card-body");
-    innerDiv.classList.add("bg-warning");
+
+    innerDiv.classList.add("card-body", "bg-warning");
+
 
     headTitle.classList.add("card-title");
     headTitle.innerText = CardTitle;
@@ -24,9 +24,7 @@ function cardCreator(CardTitle, CardText, BtnLink) {
     paragraph.classList.add("card-text");
     paragraph.innerText = CardText;
 
-    buttonLink.classList.add("btn");
-    buttonLink.classList.add("btn-dark");
-    buttonLink.classList.add("text-warning");
+    buttonLink.classList.add("btn", "btn-dark", "text-warning");
     buttonLink.href = BtnLink;
     buttonLink.innerText = "Go to project";
 
