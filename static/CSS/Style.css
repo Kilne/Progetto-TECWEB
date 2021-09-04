@@ -4,16 +4,7 @@ body {
     background: var(--bs-gray-dark);
 }
 
-/*Il CSS di bootsrap può essere sovrascritto anche nelle singole proprietà e mantenendo le altre*/
-.accordion-button {
-    background-color: #ffc107;
-}
-
-.accordion-button:not(.collapsed) {
-    color: black;
-    background-color: rgba(255, 193, 7, 0.73);
-}
-
-.accordion-collapse {
-    background: rgba(255, 193, 7, 0.39);
+/*Progess bar backgound override*/
+.progress {
+    background-color: rgba(0, 0, 0, 0.2);
 }
