@@ -67,12 +67,12 @@
 <main>
     {% block main %}
         <div class="bodie">
-        <div class="d-sm-flex mx-2 align-items-center justify-content-between">
-            <div>
+            <div class="text-light text-warning">
                 <h1>Stop wasting <span class="text-warning">TIME</span>, use it better!</h1>
             </div>
-        </div>
-        <div class="my-2 align-center">
+            <div class="my-2 align-center">
+                <button class="btn btn-primary btn-lg">Start now</button>
+            </div>
         </div>
     {% endblock %}
 </main>
@@ -85,7 +85,25 @@
 {#    https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page#}
 <footer class="mt-auto bg-warning">
     <div class="container text-black">
-        <h4>Footer qui</h4>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase"> TECHWEB PROJECT</h5>
+                <p>
+                    Web app made by:<br>
+                    -Luca Maiuri MT 0124001418<br>
+                    -Christian Porritiello MT 0124002014<br>
+                </p>
+            </div>
+            <div class="col">
+            </div>
+            <div class="col align-self-center">
+                <h4><i class="bi bi-alarm-fill d-inline-block align-baseline" style="font-size: 1.2rem">
+                </i>
+                    TIME IS APP</h4>
+            </div>
+
+
+        </div>
     </div>
 </footer>
 
