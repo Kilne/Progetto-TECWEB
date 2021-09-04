@@ -2,7 +2,7 @@ function ListGroupCreator(ProjectTitle, ProjectObj, Percentage, ProjLink) {
 
 //    Single list group element
     const listItem = document.createElement("li");
-    listItem.classList.add("list-group-item", "bg-warning", "m-2", "w-auto");
+    listItem.classList.add("list-group-item", "bg-warning", "m-2", "bg-gradient");
 
 //    map for divs
     const div_map = new Map();
