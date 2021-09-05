@@ -36,6 +36,17 @@ def user():
     return render_template('UserProject.html')
 
 
+@app.route("/create/")
+def create():
+    return render_template('CreateProject.html')
+
+
+# sw
+# @app.route("/sw.js")
+# def sw():
+#     return app.send_static_file("sw.js")
+
+
 # Page started in debug modify after, for Pycharm check the IDE launch config
 if __name__ == "__main__":
     app.run("127.0.0.1", 5000, debug=True)
