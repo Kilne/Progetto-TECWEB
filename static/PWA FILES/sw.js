@@ -5,6 +5,7 @@ let filesToCache = [
     "/static/CSS/Style.css",
     "/template/Main.html",
     "/template/Testing.html",
+    "templates/UserProject.html",
     "/static/PWA FILES/Manifest Icons/32px-Antu_alarm-clock.svg.png",
     "/static/PWA FILES/Manifest Icons/64px-Antu_alarm-clock.svg.png",
     "/static/PWA FILES/Manifest Icons/128px-Antu_alarm-clock.svg.png",
