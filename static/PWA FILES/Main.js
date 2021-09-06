@@ -1,12 +1,11 @@
 // DEPRECATO NESSUNA SOLUZIONE PER L'IMPLEMENTAZIONE DEL SERVICE WORKER
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
-        navigator.serviceWorker.register('static/PWA FILES/sw.js').then(function (registration) {
-            // Registration was successful
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, function (err) {
-            // registration failed :(
-            console.log('ServiceWorker registration failed: ', err);
-        });
-    });
+    navigator.serviceWorker
+        .register("../static/PWA%20FILES/sw.js", {scope: '/'})
+        .then(registration => {
+            console.log("ServiceWorker running");
+        })
+        .catch(err => {
+            console.log(err);
+        })
 }
