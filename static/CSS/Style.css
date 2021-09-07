@@ -4,5 +4,27 @@ body {
     background: var(--bs-gray-dark);
 }
 
+.carousel .carousel-indicators li {
+    background-color: #fff;
+rgba(70, 70, 70, .25);
+}
 
+.carousel .carousel-indicators .active {
+    background-color: #444;
+}
+
+.modal-header {
+    background-color: #FFD700;
+}
+
+.modal-body {
+    background-color: #808080;
+}
+
+.list-group-item-action {
+    background-color: #FFD700;
+}
+
+.modal-footer {
+    background-color: #FFD700;
 }
