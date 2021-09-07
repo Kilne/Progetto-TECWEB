@@ -1,8 +1,8 @@
-/*Gradiente lineare per il body*/
 body {
     height: 100vh;
     background: var(--bs-gray-dark);
 }
 
-
+.progress {
+    background-color: rgba(0, 0, 0, 0.30);
 }
