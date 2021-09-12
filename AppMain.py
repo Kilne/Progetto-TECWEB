@@ -1,21 +1,14 @@
 from flask import render_template, Flask
-from flask_cors import CORS
+from flask_cors import cross_origin
 from jinja2 import select_autoescape, Environment
-from pymongo import MongoClient
+from MONGOUTILS import ConnectToDB, GettingUserDB, GetUserProjects
 
 app = Flask(__name__)
-CORS(app)
 # jinja2 autoescape
 env = Environment(autoescape=select_autoescape(
     enabled_extensions=('html', 'xml'),
     default_for_string=True,
 ))
-
-
-# connessione funziona anche se senza SSL , capire perchè stampa due volte l'ID
-# MongoDB atlas connection client
-# clientDB = MongoClient("mongodb+srv://Luca:WliL3VbEqdbl5VAX@clusterprogetto.0ocor.mongodb.net/ClusterProgetto"
-#                        "?retryWrites=true&w=majority", ssl=True, ssl_cert_reqs='CERT_NONE')
 
 
 # Main page
@@ -37,7 +30,11 @@ def user():
 
 
 @app.route("/create/")
+@cross_origin()
 def create():
+    ConnectToDB.connect_mongo()
+    GettingUserDB.user_db()
+    GetUserProjects.get_projects()
     return render_template('CreateProject.html')
 
 

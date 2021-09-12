@@ -12,10 +12,10 @@ function cardCreator(CardTitle, CardText, BtnLink) {
     paragraph.id = "cardText";
     buttonLink.id = "cardButton";
 
-    outerDiv.classList.add("card", "border-dark");
+    outerDiv.classList.add("card", "border-dark", "border-1", "m-auto");
+    outerDiv.style.width = "400px";
 
-
-    innerDiv.classList.add("card-body", "bg-warning");
+    innerDiv.classList.add("card-body", "bg-warning", "text-center", "bg-gradient");
 
 
     headTitle.classList.add("card-title");
