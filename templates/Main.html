@@ -67,7 +67,7 @@
 <main>
     {% block main %}
         <div class="bodie">
-            <div class="text-light text-warning mx-3">
+            <div class="text-light text-center text-warning mx-3">
                 <h1>Stop wasting <span class="text-warning">TIME</span>, use it better!</h1>
             </div>
             <div class="container">
@@ -81,11 +81,13 @@
                     </div>
                 </div>
             </div>
-            <!-- Modal -->
+        </div>
+        <!-- Modal -->
+        <section id="ModalDialogue">
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
+                    <div class="modal-content bg-warning bg-gradient">
                         <div class="modal-header">
                             <h5 class="modal-title text-dark" id="staticBackdropLabel">Adding new objective...</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -94,10 +96,10 @@
                         <div class="modal-body">
                             <!-- Modal body-->
                             <div class="mb-3 border-dark">
-                                <label for="nameOfObjective" class="form-label text-light">Name of objective:</label>
+                                <label for="nameOfObjective" class="form-label">Name of objective:</label>
                                 <input class="form-control" type="text" id="nameOfObjective">
                             </div>
-                            <label for="nameOfList" class="text-light">Select the right button:</label>
+                            <label for="nameOfList">Select the right button:</label>
                             <div class="row" id="nameOfList">
                                 <div class="col-auto">
                                     <div class="list-group" id="list-tab" role="tablist">
@@ -112,71 +114,42 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="tab-content" id="nav-tabContent">
-                                        <div class="tab-pane fade show active text-light" id="list-concrete"
+                                        <div class="tab-pane fade show active" id="list-concrete"
                                              role="tabpanel"
                                              aria-labelledby="list-concrete-id">You are reaching something like:
                                             Studying a book, put money aside, pianification for a purchase (Here we
                                             can calculate an ideal path)
                                         </div>
-                                        <div class="tab-pane fade text-light" id="list-abstract" role="tabpanel"
+                                        <div class="tab-pane fade" id="list-abstract" role="tabpanel"
                                              aria-labelledby="list-abstract-id">Reaching something like: changing
                                             your way of life (Here you have to select the path of objectives).
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-warning btn-outline-danger text-dark border-dark"
+                            <button type="button" class="btn btn-dark btn-outline-danger text-warning border-dark"
                                     data-bs-dismiss="modal">Close
                             </button>
-                            <button type="button" class="btn btn-dark btn-outline-success text-warning border-dark">Save
+                            <button type="button" class="btn btn-dark btn-outline-success text-warning border-dark">
+                                Save
                                 and add
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators mb-0">
-                <button type="button" data-bs-target="#carouselExempleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true"
-                        aria-label="Slide1"></button>
-                <button type="button" data-bs-target="#carouselExempleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide2"></button>
-                <button type="button" data-bs-target="#carouselExempleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                    <div class="card m-auto border-dark" style="width: 400px">
-                        <div class="card-body text-center bg-warning">
-                            <h5 class="card-title">Math book</h5>
-                            <p class="card-text">Read chapter 240</p>
-                            <a href="#" class="btn btn-dark text-warning">Completed! Go next..</a>
-                        </div>
-                    </div>
+        </section>
+        <!--CARUSEL-->
+        <section id="Slideshow">
+
+            <div id="carouselExampleInterval" class="carousel slide mx-md-5 px-md-5" data-bs-ride="carousel">
+                <div class="carousel-indicators mb-0">
+
                 </div>
-                <div class="carousel-item" data-bs-interval="10000">
-                    <div class="card m-auto border-dark" style="width: 400px">
-                        <div class="card-body text-center bg-warning">
-                            <h5 class="card-title">Healty life</h5>
-                            <p class="card-text">Go to sleep earlier and sleep more</p>
-                            <a href="#" class="btn btn-dark text-warning">Completed! Go next..</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="10000">
-                    <div class="card m-auto border-dark" style="width: 400px">
-                        <div class="card-body text-center bg-warning">
-                            <h5 class="card-title">History book</h5>
-                            <p class="card-text">Read chapter 120</p>
-                            <a href="#" class="btn btn-dark text-warning">Completed! Go next..</a>
-                        </div>
-                    </div>
+                <div class="carousel-inner">
+
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
                         data-bs-slide="prev">
@@ -185,13 +158,14 @@
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
                         data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+        </section>
     {% endblock %}
 </main>
+
 
 {% block body %}
 
@@ -229,8 +203,9 @@
 <!--BOOTSTRAP ICON SET-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <!--JS SCRIPTS RESERVED-->
-<script src="../static/JS/AriaChanger.js">
-</script>
+<script src="../static/JS/AriaChanger.js"></script>
+<script src="../static/JS/DynamicHtmlJS/ELEMENTCREATORS/CardCreator.js"></script>
+<script src="../static/JS/JSMAINS/MAINPAGEJS/MainPageExec.js"></script>
 {% block scriptJS %}
 
 {% endblock %}
