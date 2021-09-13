@@ -10,9 +10,9 @@ for (let i = 0; i < 5; i++) {
     // CUSTOMIZING INDICATORS
     let carousel_indicator_ele = document.createElement("button");
     carousel_indicator_ele.type = "button";
-    carousel_indicator_ele.setAttribute("data-bs-target", "#carouselExempleIndicators");
-    carousel_indicator_ele.setAttribute("data-bs-slide-to", i.toString());
-    carousel_indicator_ele.setAttribute("aria-label", "Slide" + (i + 1).toString());
+    carousel_indicator_ele.setAttribute("data-bs-target", "#carouselExampleIndicators");
+    carousel_indicator_ele.setAttribute("data-bs-slide-to", "" + i.toString());
+    carousel_indicator_ele.setAttribute("aria-label", "Slide " + (i + 1).toString());
 
     if (i === 0) {
         carousel_indicator_ele.classList.add("active");
