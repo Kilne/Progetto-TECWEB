@@ -6,3 +6,7 @@ body {
 .progress {
     background-color: rgba(0, 0, 0, 0.30);
 }
+
+.modal-content {
+    background-color: rgb(255, 238, 139);
+}
