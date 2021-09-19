@@ -1,32 +1,23 @@
 {% extends "Main.html" %}
-{# blocco tile #}
+
+
 {% block title %}
     Testing
 {% endblock %}
 
-{#blocco main , non richiamo gli elementi#}
 {% block main %}
-    <h3 class="text-warning text-lg-center align-content-center">
+    <h3 class="text-warning text-center mt-md-auto pt-md-1">
         PAGE TESTING
     </h3>
 {% endblock %}
-{#blocco body interno#}
+
+
 {% block body %}
-
-    <div class="container-lg border-1 border border-warning" id="test">
-        <div class="row row-cols-auto align-items-center g-md-2 p-md-2" id="showcase">
-
-        </div>
-    </div>
-
 
 {% endblock %}
 
-{#blocco script JS richiamo gli elementi #}
+
 {% block scriptJS %}
-    <script src="../static/JS/DynamicHtmlJS/ELEMENTCREATORS/CardCreator.js">
-    </script>
-    <script src="../static/JS/JSMAINS/DynamicMain.js">
-    </script>
+
 {% endblock %}
 

@@ -1,7 +1,7 @@
 from flask import render_template, Flask
 from flask_cors import cross_origin
 from jinja2 import select_autoescape, Environment
-from MONGOUTILS import ConnectToDB, GettingUserDB, GetUserProjects
+from MONGOUTILS import ConnectToDB, GettingUserDB, GetUserProjects, FindUserCollection
 
 app = Flask(__name__)
 # jinja2 autoescape
@@ -19,7 +19,9 @@ def home():
 
 # test page
 @app.route("/test/")
+@cross_origin()
 def test():
+    FindUserCollection.get_collection_list()
     return render_template('Testing.html')
 
 
