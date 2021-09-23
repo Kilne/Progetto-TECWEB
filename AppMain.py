@@ -1,7 +1,7 @@
-from flask import render_template, Flask
+from flask import render_template, Flask, jsonify
 from flask_cors import cross_origin
 from jinja2 import select_autoescape, Environment
-from MONGOUTILS import ConnectToDB, GettingUserDB, GetUserProjects, FindUserCollection
+from MONGOUTILS.FindUserData import find_data
 
 app = Flask(__name__)
 # jinja2 autoescape
@@ -21,8 +21,14 @@ def home():
 @app.route("/test/")
 @cross_origin()
 def test():
-    FindUserCollection.get_collection_list()
+    print(find_data("UserTest"))
     return render_template('Testing.html')
+
+
+@app.route("/test/db")
+@cross_origin()
+def get_data():
+    return jsonify(find_data("User2Test"))
 
 
 # user page
@@ -34,9 +40,6 @@ def user():
 @app.route("/create/")
 @cross_origin()
 def create():
-    ConnectToDB.connect_mongo()
-    GettingUserDB.user_db()
-    GetUserProjects.get_projects()
     return render_template('CreateProject.html')
 
 
