@@ -8,9 +8,10 @@
 {% block main %}
     <h3 class="text-warning text-center mt-md-auto pt-md-1">
         PAGE TESTING
-        <a href="{{ url_for("get_data") }}" role="button" class="btn-warning btn">
+        <a href="{{ url_for("get_data",user="UserTest") }}" role="button" class="btn-warning btn">
             Press me
         </a>
+        {# @todo: https://www.w3schools.com/js/js_api_fetch.asp fare un API che prende il Json e lo mostra    #}
     </h3>
 {% endblock %}
 

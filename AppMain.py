@@ -1,14 +1,18 @@
-from flask import render_template, Flask, jsonify
+from flask import render_template, Flask, jsonify, abort
 from flask_cors import cross_origin
 from jinja2 import select_autoescape, Environment
-from MONGOUTILS.FindUserData import find_data
+from pymongo import MongoClient
 
+# the main name of the flask app
 app = Flask(__name__)
 # jinja2 autoescape
 env = Environment(autoescape=select_autoescape(
     enabled_extensions=('html', 'xml'),
     default_for_string=True,
 ))
+# mongo DB connection on server start
+client_db = MongoClient("mongodb+srv://Luca:WliL3VbEqdbl5VAX@clusterprogetto.0ocor.mongodb.net/ClusterProgetto"
+                        "?retryWrites=true&w=majority", ssl=True, ssl_cert_reqs='CERT_NONE')
 
 
 # Main page
@@ -21,14 +25,33 @@ def home():
 @app.route("/test/")
 @cross_origin()
 def test():
-    print(find_data("UserTest"))
     return render_template('Testing.html')
 
 
-@app.route("/test/db")
+# Mongo user collection retrieve route
+@app.route("/test/db/<string:user>", methods=["GET"])
 @cross_origin()
-def get_data():
-    return jsonify(find_data("User2Test"))
+def get_data(user):
+    # connect to user project storage
+    user_dbs = client_db.UserProjects
+    # initialize user collection container
+    user_collection = None
+    # cycle trough the collections searching for the user one, if not present 404
+    for collection_of_user in user_dbs.list_collection_names():
+        if collection_of_user == user:
+            # if found store the collection
+            user_collection = user_dbs[collection_of_user]
+        else:
+            abort(404)
+    # prepare sanitized data container
+    sanitized_id_data = []
+    # cyle trough documents and sanitize the "_id" type
+    for document in user_collection.find():
+        document["_id"] = str(document["_id"])
+        sanitized_id_data.append(document)
+    # return the data in JSON format
+    data = {"data": sanitized_id_data}
+    return jsonify(data)
 
 
 # user page
@@ -43,7 +66,7 @@ def create():
     return render_template('CreateProject.html')
 
 
-# sw
+# sw DEPRECATED
 # @app.route("/sw.js")
 # def sw():
 #     return app.send_static_file("sw.js")
