@@ -1,4 +1,4 @@
-from flask import render_template, Flask, jsonify, abort
+from flask import render_template, Flask, jsonify, abort, request
 from flask_cors import cross_origin
 from jinja2 import select_autoescape, Environment
 from pymongo import MongoClient
@@ -29,29 +29,32 @@ def test():
 
 
 # Mongo user collection retrieve route
-@app.route("/test/db/<string:user>", methods=["GET"])
+@app.route("/db/<string:user>", methods=["POST"])
 @cross_origin()
 def get_data(user):
-    # connect to user project storage
-    user_dbs = client_db.UserProjects
-    # initialize user collection container
-    user_collection = None
-    # cycle trough the collections searching for the user one, if not present 404
-    for collection_of_user in user_dbs.list_collection_names():
-        if collection_of_user == user:
-            # if found store the collection
-            user_collection = user_dbs[collection_of_user]
-        else:
-            abort(404)
-    # prepare sanitized data container
-    sanitized_id_data = []
-    # cyle trough documents and sanitize the "_id" type
-    for document in user_collection.find():
-        document["_id"] = str(document["_id"])
-        sanitized_id_data.append(document)
-    # return the data in JSON format
-    data = {"data": sanitized_id_data}
-    return jsonify(data)
+    if request.method == "POST":
+        # connect to user project storage
+        user_dbs = client_db.UserProjects
+        # initialize user collection container
+        user_collection = None
+        # cycle trough the collections searching for the user one, if not present 404
+        for collection_of_user in user_dbs.list_collection_names():
+            if collection_of_user == user:
+                # if found store the collection
+                user_collection = user_dbs[collection_of_user]
+            else:
+                abort(404)
+        # prepare sanitized data container
+        sanitized_id_data = []
+        # cycle trough documents and sanitize the "_id" type
+        for document in user_collection.find():
+            document["_id"] = str(document["_id"])
+            sanitized_id_data.append(document)
+        # return the data in JSON format
+        data = {"data": sanitized_id_data}
+        return jsonify(data)
+    else:
+        abort(404)
 
 
 # user page
