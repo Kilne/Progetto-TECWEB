@@ -29,10 +29,10 @@ def test():
 
 
 # Mongo user collection retrieve route
-@app.route("/db/<string:user>", methods=["POST"])
+@app.route("/db/<string:user>", methods=["GET"])
 @cross_origin()
 def get_data(user):
-    if request.method == "POST":
+    if request.method == "GET":
         # connect to user project storage
         user_dbs = client_db.UserProjects
         # initialize user collection container
@@ -51,8 +51,7 @@ def get_data(user):
             document["_id"] = str(document["_id"])
             sanitized_id_data.append(document)
         # return the data in JSON format
-        data = {"data": sanitized_id_data}
-        return jsonify(data)
+        return jsonify(sanitized_id_data)
     else:
         abort(404)
 
