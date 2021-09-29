@@ -1,4 +1,8 @@
-//@todo:the response JSON from JQUERY is itself a JSON with many fields must pick the right one and return it
-let data_post = post_data("UserTest")
-console.log(data_post)
-document.getElementById("JSON").innerText = data
+//@todo:continua a darmi promesse.....
+async function myDisplay() {
+    return await post_data("UserTest")
+}
+
+let dbs_data = await myDisplay()
+
+console.log(dbs_data)
