@@ -1,0 +1,54 @@
+{% extends "Main.html" %}
+{% block title %}Registration{% endblock %}
+{% block main %}
+    {% if message %}
+        <div class="alert alert-danger" role="alert">
+            <p>{{ message }}</p>
+        </div>
+    {% endif %}
+    <form action="" method="post" name="signup_form">
+        <div class="card card-4 my-3 mx-3" style="width :auto">
+            <div class="card-header">
+                <h2>Registration</h2>
+            </div>
+            <div class="card-body">
+                <form class="px-4 py-3" id="formR">
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="Name" name="inputName"
+                               placeholder="Insert your name">
+                        <div class="invalid-feedback">
+                            Please choose a name
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Surname" class="form-label">Surname</label>
+                        <input type="text" class="form-control" id="Surname" name="inputSurname"
+                               placeholder="Insert your surname">
+                        <div class="invalid-feedback">
+                            Please choose a surname
+                        </div>
+                    </div>
+                    <div class="mb-1">
+                        <label for="rEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="rEmail" name="inputEmail"
+                               placeholder="email@example.com"
+                               onkeyup="validation()">
+                        <div class="text-danger" id="mId">
+                            Please choose an E-mail
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pw" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="pw" name="inputPassword" placeholder="Password">
+                    </div>
+
+                    <button type="submit" class="btn btn-dark text-warning border-dark">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+{% block scriptJS %}
+    <script src="../static/JS/JSMAINS/RegistrationScript.js"></script>
+{% endblock %}

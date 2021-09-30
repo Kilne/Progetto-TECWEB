@@ -1,0 +1,43 @@
+{% extends "Main.html" %}
+{% block title %}Login{% endblock %}
+{% block main %}
+    {% if message %}
+
+    {% endif %}
+    <div class="alert alert-danger" id="message" role="alert">
+    </div>
+    <form action="" method="post">
+        <div class="card card-4 my-3 mx-3" style="width :auto">
+            <div class="card-header">
+                <h2>Login</h2>
+            </div>
+            <div class="card-body">
+                <form class="px-4 py-3" id="formR">
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" name="inputName" id="Email"
+                               placeholder="email@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Password" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="inputPassword" id="Password"
+                               placeholder="Password">
+                    </div>
+                    <div class="mb-3">
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-dark mb-0">
+                <div class="d-grid gap-1">
+                    <button type="submit" name="btnSignUp" class="btn btn-dark text-warning border-dark">Sign in
+                    </button>
+                </div>
+                <a class="dropdown-item" href="{{ url_for("signUp") }}">New around here? Sign up</a>
+                <a class="dropdown-item" href="#">Forgot password? So cazz re tuoj</a>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+{% block scriptJS %}
+    <script src="/static/JS/SignUp.js"></script>
+{% endblock %}
