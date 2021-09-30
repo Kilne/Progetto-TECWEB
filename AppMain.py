@@ -54,13 +54,6 @@ def user():
     return render_template('UserProject.html')
 
 
-@app.route("/create/")
-@cross_origin()
-def create():
-    ConnectToDB.connect_mongo()
-    GettingUserDB.user_db()
-    GetUserProjects.get_projects()
-    return render_template('CreateProject.html')
 
 
 # sw
