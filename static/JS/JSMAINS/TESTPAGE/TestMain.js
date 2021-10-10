@@ -1,12 +1,15 @@
 // The web page main JS
-// https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
-const main = async () => {
-    const resulting = await get_data("UserTest");
-    let anchor = document.getElementById("JSON");
-    for (const resultingKey in resulting) {
-        anchor.innerText += resulting[resultingKey]["owner"];
-    }
-}
+// https://www.w3schools.com/js/js_json_intro.asp
+// https://www.sitepoint.com/loop-through-json-response-javascript/
+(async () => {
 
-main();
+    const resp = await get_data("UserTest");
+    resp.forEach((data) => {
+        Object.entries(data).forEach(([key, value]) => {
+            console.log(`${key}: ${value}`);
+        });
+    });
+})();
+
+
 

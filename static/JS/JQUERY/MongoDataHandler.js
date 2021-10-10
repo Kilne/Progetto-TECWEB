@@ -1,10 +1,11 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise?retiredLocale=it
 // https://it.javascript.info/fetch
-function get_data(username) {
+async function get_data(username) {
 
-    return fetch("/db/" + username)
-        .then(value => value.json())
-        .then(value => {
-            return value;
-        });
+    const url = `/db/${username}`;
+
+    const response = await fetch(url);
+    const json = await response.json();
+    console.log(json);
+    return json;
 }
