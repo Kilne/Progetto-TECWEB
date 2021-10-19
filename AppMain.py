@@ -1,6 +1,6 @@
 import time
 
-from flask import render_template, Flask, request, json, abort, flash, session
+from flask import render_template, Flask, request, json, abort, flash, session, redirect, url_for
 # from flask_cors import cross_origin
 from jinja2 import select_autoescape, Environment
 # from werkzeug.security import generate_password_hash, check_password_hash
@@ -23,8 +23,8 @@ collection = db.UsersInfo
 # Main page
 @app.route("/")
 def home():
-    if 'email' in session:
-        return 'You are logged in as ' + session['email']
+    if 'username' in session:
+        return flash('You are logged in as ' + session['username'])
     return render_template('Main.html')
 
 
@@ -35,46 +35,46 @@ def signUp():
         _surname = request.form['inputSurname']
         _email = request.form['inputEmail']
         _password = request.form['inputPassword']
-        post = {
-            "name": _name,
-            "surname": _surname,
-            "email": _email,
-            "password": _password
-        }
         # risolto, togliendo le parentesi quadrate da 'POST' e' andato .-.
-        if db.UsersInfo.find_one(post):
-            msg = 'Your credential already exist, try again'
-            flash(msg)
+        if db.UsersInfo.find_one({'email': _email}):  # qui non va bene non c'è controllo per la registrazione
+            flash('Your credential already exist, try again', 'error')
         else:
-            post_info = collection.insert_one(post)
-            post_info
-            return render_template('Login.html')
+            info = {
+                "name": _name,
+                "surname": _surname,
+                "email": _email,
+                "password": _password
+            }
+            save_info = collection.insert_one(info)
+            save_info
+            return redirect(url_for('login'))
     return render_template('Sign_Up.html')
 
 
 # min 32 vedi il post per il login
 
 
-# @app.route("/logged in")
-# def logged_in():
-#     if "user" in session:
-#       user =
-#        return
-
-
 @app.route("/signin/", methods=['POST', 'GET'])
 def login():
-    # if request.method == 'POST':
-    #   _email = request.form['inputEmail']
-    #  _password = request.form['inputPassword']
-    # existing_user = collection.find_one({'email' : _email})
-    # if existing_user is None:
+    if request.method == 'POST':
+        render_template('Login.html')
+        _email = request.form['inputEmail']
+        _password = request.form['inputPassword']
+        existing_user = collection.find_one(
+            {"_id": 0, "name": 0, "surname": 0, "email": _email, "password": _password})
+        if existing_user is None:  # se risolvi il precedente risolvi anche questo problema
+            flash('Your credential are wrong, try again')
+        else:
+            _username = collection.find({}, {"_id": 0, "name": 1, "surname": 0, "email": 0, "password": 0})
+            session['username'] = _username
+            return redirect(url_for('home'))
     return render_template('Login.html')
 
 
 @app.route("/logout/")
 def logout():
-    return render_template('Main.html')
+    session.pop('username', None)
+    return redirect(url_for('home'))
 
 
 # test page
