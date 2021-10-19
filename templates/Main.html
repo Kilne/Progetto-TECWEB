@@ -58,9 +58,9 @@
                 </div>
             </div>
             <div class="collapse navbar-collapse justify-content-end">
-                <a class="navbar-brand" href="{{ url_for("logout") }}">
+                {# <a class="navbar-brand" href="{{ url_for("logout") }}">
                     <i class="bi bi-x-circle-fill d-inline-block align-baseline" style="font-size: 1.2rem">LOGOUT</i>
-                </a>
+                </a> #}
                 <a class="navbar-brand" href="{{ url_for("login") }}">
                     <i class="bi bi-person-fill d-inline-block align-baseline" style="font-size: 1.2rem">LOGIN</i>
                 </a>
@@ -74,6 +74,13 @@
 </header>
 
 <main>
+    {% if msg == True %}
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <strong>Success!</strong> You have been signed in successfully!
+        </div>
+    {% endif %}
     {% block main %}
         <div class="bodie">
             {% block content %}
@@ -257,6 +264,7 @@
 <script src="../static/JS/AriaChanger.js"></script>
 <script src="../static/JS/DynamicHtmlJS/ELEMENTCREATORS/CardCreator.js"></script>
 <script src="../static/JS/JSMAINS/MAINPAGEJS/MainPageExec.js"></script>
+<script src="../static/JS/JSMAINS/RegistrationScript.js"></script>
 {% block scriptJS %}
 
 {% endblock %}

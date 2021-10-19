@@ -2,10 +2,9 @@
 {% block title %}Login{% endblock %}
 {% block main %}
     {% if message %}
-
+        <div class="alert alert-danger" id="message" role="alert">
     {% endif %}
-    <div class="alert alert-danger" id="message" role="alert">
-    </div>
+</div>
     <form action="" method="post">
         <div class="card card-4 my-3 mx-3" style="width :auto">
             <div class="card-header">
@@ -15,7 +14,7 @@
                 <form class="px-4 py-3" id="formR">
                     <div class="mb-3">
                         <label for="Email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" name="inputName" id="Email"
+                        <input type="email" class="form-control" name="inputEmail" id="Email"
                                placeholder="email@example.com">
                     </div>
                     <div class="mb-3">
