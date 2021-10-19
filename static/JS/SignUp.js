@@ -1,4 +1,4 @@
-$(function () {
+/*$(function () {
     $('#btnSignUp').click(function () {
         $.ajax({
             url: '/Sign_Up/',
@@ -13,4 +13,4 @@ $(function () {
             }
         })
     })
-})
+})*/
