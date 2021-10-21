@@ -20,7 +20,7 @@ async function get_data(username) {
 
 async function post_data(username, data) {
     // Url della route di flask, ritorna una PROMISE
-    const url = `/db/${username}/post`
+    const url = `/db/${username}/post`;
     // Mando i dati insieme alla fetch specifico il modo in cui le mando e che tipologia di dato sta arrivando con
     // il campo @headers i dati sono nel campo @body che sfrutta la funzione @JSON.stringify per renderlo leggibile a
     // flask altrimenti ho molti problemi lato backend
@@ -35,6 +35,20 @@ async function post_data(username, data) {
     // Ottengo la risposta il JSON (sempre un JSON di array) conterrà solo la risposta del DB altrimenti avrò un bel
     // server internal error 500
     return await response.json();
+}
 
+async function put_data(username, data) {
 
+    const url = `/db/${username}/update`;
+
+    const response = await fetch(url, {
+        method: "PUT",
+        mode: "cors",
+        headers: {
+            "content_type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+
+    return await response.json();
 }

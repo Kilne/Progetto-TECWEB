@@ -23,14 +23,32 @@
     let data_to_send = {
         "owner": "Luca",
         "project_number": 55,
-        "objective": "dicks",
+        "objective": "Pepo",
         "percentage": 99.0,
         "proj_name": "Meme"
     };
+
+
     const injection_response = await post_data("UserTest", data_to_send);
 
     console.log(injection_response);
+
+    const update_array = await get_data("UserTest");
+
+    console.log(update_array)
+
+    let entry_to_update = {};
+
+    for (const updateArrayKey in update_array[2]) {
+        entry_to_update[updateArrayKey] = update_array[2][updateArrayKey];
+    }
+    entry_to_update["owner"] = "Yoda";
+    console.log(entry_to_update);
+    const update_response = await put_data("UserTest", entry_to_update);
+    console.log(update_response);
 })();
+
+
 
 
 
