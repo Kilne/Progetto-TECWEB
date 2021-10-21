@@ -22,6 +22,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="../static/CSS/Style.css">
     <!--OTHERS-->
+    <meta http-equiv="refresh">
     <meta charset="UTF-8">
     <title>
         {% block title %}
@@ -74,17 +75,17 @@
 </header>
 
 <main>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for msg in messages %}
-                <div class="alert alert-info alert-dismissible fade show" role="alert">
-                    <i class="bi bi-exclamation-triangle-fill"></i><strong>{{ msg }}</strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
     {% block main %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, msg in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        <i class="bi bi-exclamation-triangle-fill"></i><strong>{{ msg }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
         <div class="bodie">
             {% block content %}
             {% endblock %}
