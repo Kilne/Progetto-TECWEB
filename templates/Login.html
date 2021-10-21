@@ -1,17 +1,16 @@
 {% extends "Main.html" %}
 {% block title %}Login{% endblock %}
 {% block main %}
-    {% with messages = get_flashed_messages() %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
-            {% for msg in messages %}
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {% for category, msg in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
                     <i class="bi bi-exclamation-triangle-fill"></i><strong>{{ msg }}</strong>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             {% endfor %}
         {% endif %}
     {% endwith %}
-    </div>
     <form action="" method="post">
         <div class="card card-4 my-3 mx-3" style="width :auto">
             <div class="card-header">
@@ -20,9 +19,14 @@
             <div class="card-body">
                 <form class="px-4 py-3" id="formR">
                     <div class="mb-3">
-                        <label for="Email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" name="inputEmail" id="Email"
-                               placeholder="email@example.com">
+                        <label for="Name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="Name" name="inputName"
+                               placeholder="Insert your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="lEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" name="inputEmail" id="lEmail"
+                               placeholder="Insert your E-Mail">
                     </div>
                     <div class="mb-3">
                         <label for="Password" class="form-label">Password</label>
@@ -45,5 +49,4 @@
     </form>
 {% endblock %}
 {% block scriptJS %}
-    <script src="/static/JS/SignUp.js"></script>
 {% endblock %}
