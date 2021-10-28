@@ -1,21 +1,18 @@
-from flask import render_template, Flask, request, json, abort, flash, session, redirect, url_for
-from datetime import timedelta
-# from flask_cors import cross_origin
+from flask import render_template, Flask, request, flash, session, redirect, url_for
 from jinja2 import select_autoescape, Environment
-# from werkzeug.security import generate_password_hash, check_password_hash
 from pymongo import MongoClient
 
+# Flask initialization
 app = Flask(__name__)
-app.secret_key = 'A_facc_ro_cazz'
-app.permanent_session_lifetime = timedelta(hours=1)
+app.config.from_pyfile('flaskConfig.py')
+
 # jinja2 autoescape
 env = Environment(autoescape=select_autoescape(
     enabled_extensions=('html', 'xml'),
     default_for_string=True,
 ))
 
-client = MongoClient("mongodb+srv://Luca:WliL3VbEqdbl5VAX@clusterprogetto.0ocor.mongodb.net/ClusterProgetto"
-                     "?retryWrites=true&w=majority", ssl=True, ssl_cert_reqs='CERT_NONE')
+client = MongoClient(app.config["DATABASE_URI"], ssl=True, ssl_cert_reqs='CERT_NONE')
 db = client.Users
 collection = db.UsersInfo
 
@@ -26,11 +23,14 @@ def home():
     if 'username' in session:
         return render_template('Main.html'), flash('You are logged in as ' + session['username'], 'info')
     else:
+        # @TODO: non saprei, perchè flashargli in faccia ad un utente che viene sulla pagina che non sei loggato?
+        #   dovresti flasgliarli che non sei loggato se clicca per andare in un posto in cui è richiesto,
+        #   sarebbe più sensato un redirect alla pagina di login ?
         return render_template('Main.html'), flash('You are not logged in', 'danger')
 
 
 @app.route("/signup/", methods=['GET', 'POST'])
-def signUp():
+def signup():
     if request.method == 'POST':
         _name = request.form['inputName']
         _surname = request.form['inputSurname']
@@ -47,8 +47,11 @@ def signUp():
                     "email": _email,
                     "password": _password
                 }
+                # @TODO: sta variabile non la usi? Quando fai insert one ti restituisce un pointer al documento
+                #   se non ti serve il pointer e vuoi solo sapere se è andato devi aggiungere (info).acknowledged
+                #    e magari usare il risultato booleano per fare un controllo ad esempio se qualcosa va storto
+                #    e nel caso fargli re iniziare il login nella pagina con un redirect
                 save_info = collection.insert_one(info)
-                save_info
                 return redirect(url_for('login'))
         else:
             flash('Insert all the camps', 'danger')
@@ -73,7 +76,7 @@ def login():
             session['username'] = _name
             return redirect(url_for('home'))
         else:
-            flash('Insert all camps please', 'info')
+            flash('Insert all form fields please', 'info')
     return render_template('Login.html')
 
 
