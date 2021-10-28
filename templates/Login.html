@@ -1,0 +1,52 @@
+{% extends "Main.html" %}
+{% block title %}Login{% endblock %}
+{% block main %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, msg in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill"></i><strong>{{ msg }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="" method="post">
+        <div class="card card-4 my-3 mx-3" style="width :auto">
+            <div class="card-header">
+                <h2>Login</h2>
+            </div>
+            <div class="card-body">
+                <form class="px-4 py-3" id="formR">
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="Name" name="inputName"
+                               placeholder="Insert your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="lEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" name="inputEmail" id="lEmail"
+                               placeholder="Insert your E-Mail">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Password" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="inputPassword" id="Password"
+                               placeholder="Password">
+                    </div>
+                    <div class="mb-3">
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-dark mb-0">
+                <div class="d-grid gap-1">
+                    <button type="submit" name="btnSignUp" class="btn btn-dark text-warning border-dark">Sign in
+                    </button>
+                </div>
+                <a class="dropdown-item" href="{{ url_for("signUp") }}">New around here? Sign up</a>
+                <a class="dropdown-item" href="#">Forgot password? So cazz re tuoj</a>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+{% block scriptJS %}
+{% endblock %}
