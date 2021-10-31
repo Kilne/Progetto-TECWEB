@@ -1,4 +1,4 @@
-function cardCreator(CardTitle, CardText, BtnLink) {
+function card_creator(CardTitle, CardText, BtnLink) {
 
     let outerDiv = document.createElement("div");
     let innerDiv = document.createElement("div");

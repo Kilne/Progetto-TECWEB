@@ -30,7 +30,7 @@ for (let i = 0; i < 5; i++) {
     carousel_item_ele.setAttribute("data-bs-interval", "10000");
 
     // APPENDING CARD WITH CARD CREATOR
-    carousel_item_ele.append(cardCreator("Test Card", "Test Body", "/"));
+    carousel_item_ele.append(card_creator("Test Card", "Test Body", "/"));
 
     // APPENDING ELEMENTS TO THE ANCHORS
 
