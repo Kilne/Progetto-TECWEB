@@ -120,3 +120,4 @@ dmypy.json
 /static/CSS/BOOTSTRAP5CSS/
 /static/JS/BOOTSRAP5JS/
 /Server.run/
+flaskConfig.py

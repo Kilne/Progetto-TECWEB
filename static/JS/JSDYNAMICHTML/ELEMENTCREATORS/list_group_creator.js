@@ -1,4 +1,4 @@
-function ListGroupCreator(ProjectTitle, ProjectObj, Percentage, ProjLink) {
+function list_group_creator(ProjectTitle, ProjectObj, Percentage, ProjLink) {
 
 //    Single list group element
     const listItem = document.createElement("li");
