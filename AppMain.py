@@ -100,7 +100,10 @@ def test():
 # user page
 @app.route("/user/")
 def user():
-    return render_template('UserProject.html')
+    if session.get("username") is not None:
+        return render_template('UserProject.html')
+    else:
+        return redirect("/signin/")
 
 
 # Mongo user collection validation

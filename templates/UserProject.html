@@ -5,15 +5,15 @@
 {% endblock %}
 
 {% block main %}
-    <div class="container-fluid text-center ">
-        <h1 class="text-warning text-capitalize ">
-            User page, testing db and forms
-        </h1>
+    <div class="container-md py-md-2 m-md-2">
+        <div class="row justify-content-md-start py-md-2">
+            <div class="col-xl-auto mb-4">
+                <h4 class="text-warning">Project list:</h4>
+            </div>
+        </div>
     </div>
-
-
     <section>
-        <ul class="list-group container-sm">
+        <ul class="list-group container-sm py-4" id="projects">
 
         </ul>
     </section>
@@ -22,7 +22,9 @@
 {% block scriptJS %}
     <script src="../static/JS/JSDYNAMICHTML/ELEMENTCREATORS/list_group_creator.js">
     </script>
-    <script src="../static/JS/JSMAINS/DynamicMain2.js">
+    <script src="../static/JS/JSASYNCDATA/MongoDataHandler.js">
+    </script>
+    <script src="../static/JS/JSMAINS/USERPROJECTPAGE/UsrProjMain.js">
     </script>
 {% endblock %}
 
