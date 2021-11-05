@@ -48,17 +48,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <div class="navbar-nav">
-                    {#
-                            A quanto pare è assolutamente consigliato usare l'url_for (anche senza l'import in flask)
-                            senza di quello con il normale /route l'ide crede di stare cercando un file ed alza warning
-                            anche se poi funziona comunque, probabilemnte è dovuto a Jinja2 che incorpora l'url_for.
-                        #}
                     <a class="nav-link" id="/" href="{{ url_for("home") }}">HOME</a>
                     <a class="nav-link" id="/test/" href="{{ url_for("test") }}">TESTPAGE</a>
                     <a class="nav-link" id="/user/" href="{{ url_for("user") }}">MY PROJECTS</a>
                 </div>
             </div>
-            <div class="collapse navbar-collapse justify-content-end">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarToggler">
                 <a class="navbar-brand" href="{{ url_for("logout") }}">
                     <i class="bi bi-x-circle-fill d-inline-block align-baseline" style="font-size: 1.2rem">LOGOUT</i>
                 </a>
@@ -66,7 +61,6 @@
                     <i class="bi bi-person-fill d-inline-block align-baseline" style="font-size: 1.2rem">LOGIN</i>
                 </a>
             </div>
-
         </div>
     </nav>
     {% block header %}
@@ -237,21 +231,26 @@
 <!--FOOTER WITH BOOTSTRAP CONTANIERS-->
 {#    https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page#}
 <footer class="mt-auto bg-warning bg-gradient">
-    <div class="container text-black">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                <h5 class="text-uppercase"> TECHWEB PROJECT</h5>
-                <p>
-                    Web app made by:<br>
-                <p style="font-family:'Courier New',serif">-Luca Maiuri MT 0124001418<br>
-                    -Christian Porritiello MT 0124002014<br></p>
+    <div class="container-fluid mt-md-2">
+        <div class="row gx-md-2">
+            <div class="col-auto me-md-auto">
+                <a class="btn" href="{{ url_for('home') }}" type="button">
+                    <h4>
+                        <i class="bi bi-alarm-fill d-inline-block align-baseline" style="font-size: 1.2rem">
+                        </i>
+                        TIME IS APP
+                    </h4>
+                </a>
             </div>
-            <div class="col">
+            <div class="col-md-auto ms-md-auto">
+                <h6 class="text-uppercase">
+                    A University of studies Napoli Parthenope <br>
+                    web tech course project,made by:
+                </h6>
             </div>
-            <div class="col align-self-center">
-                <h4><i class="bi bi-alarm-fill d-inline-block align-baseline" style="font-size: 1.2rem">
-                </i>
-                    TIME IS APP</h4>
+            <div class="col-md-auto" style="font-family:'Courier New',serif">
+                -Luca Maiuri MT 0124001418<br>
+                -Christian Porritiello MT 0124002014
             </div>
         </div>
     </div>

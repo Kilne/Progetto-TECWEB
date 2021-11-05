@@ -97,6 +97,12 @@ def test():
     return render_template('Testing.html')
 
 
+# Create project page
+@app.route("/create/")
+def create():
+    return render_template('CreateProject.html')
+
+
 # user page
 @app.route("/user/")
 def user():
