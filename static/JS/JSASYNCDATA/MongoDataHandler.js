@@ -31,3 +31,23 @@ function delete_a_project(id) {
         contentType: "application/json"
     })
 }
+// @TODO: finire la schema per il database tenere conto della data in mongoDB-JS-Python
+class DatabaseEntry{
+    #internal_json= {
+        "Project_id"    :   "",
+        "Project_name"  :   "",
+        "Project_obj"   :   "",
+        "Project_own"   :   "",
+        "Project_time"  :   0,
+        "Project_tmlft" :   0,
+        "Project_per"   :   0.0,
+        "Project_steps_tot"     :   0,
+        "Project_steps_left"    :   0,
+        "Project_num"   :   0,
+        "Project_finish"    :   false,
+        "Project_concrete"  :   false
+    }
+    constructor(id,name,own,obj) {
+
+    }
+}
