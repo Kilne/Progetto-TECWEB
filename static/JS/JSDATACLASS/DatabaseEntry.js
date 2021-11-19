@@ -1,14 +1,15 @@
-// @TODO: finire la schema per il database tenere conto della data in mongoDB-JS-Python
-export class DatabaseEntry{
-    #internal_json= {
-        "Project_id"    :   "",
-        "Project_name"  :   "",
-        "Project_obj"   :   "",
-        "Project_own"   :   "",
-        "Project_time"  :   0,
-        "Project_tmlft" :   0,
-        "Project_per"   :   0.0,
-        "Project_steps_tot"     :   0,
+// @TODO: sceglieere se dare la priorità logica a JS o Python , probabilmente sarebbe meglio JS essendo statically
+//      typed non ho il problema di python che è dinamico , rimane il problema delle date.
+export class DatabaseEntry {
+    #internal_json = {
+        "Project_id": "",
+        "Project_name": "",
+        "Project_obj": "",
+        "Project_own": "",
+        "Project_time": 0,
+        "Project_tmlft": 0,
+        "Project_per": 0.0,
+        "Project_steps_tot": 0,
         "Project_steps_left"    :   0,
         "Project_num"   :   0,
         "Project_finish"    :   false,
