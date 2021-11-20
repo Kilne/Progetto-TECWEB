@@ -14,7 +14,8 @@ class DatabaseEntry:
                  p_obj: str,
                  p_owner: str,
                  p_date: datetime = datetime.now(),
-                 entry_id: str = str(ObjectId())):
+                 entry_id: str = str(ObjectId())
+                 ):
         self.__objective = p_obj
         self.__p_id = entry_id
         self.__name = p_name
