@@ -24,9 +24,6 @@ def home():
     if 'username' in session:
         return render_template('Main.html'), flash('You are logged in as ' + session['username'], 'info')
     else:
-        # @TODO: non saprei, perchè flashargli in faccia ad un utente che viene sulla pagina che non sei loggato?
-        #   dovresti flasgliarli che non sei loggato se clicca per andare in un posto in cui è richiesto,
-        #   sarebbe più sensato un redirect alla pagina di login ?
         return render_template('Main.html'), flash('You are not logged in', 'danger')
 
 
@@ -50,10 +47,6 @@ def signup():
                     "email": _email,
                     "password": _password
                 }
-                # @TODO: sta variabile non la usi? Quando fai insert one ti restituisce un pointer al documento
-                #   se non ti serve il pointer e vuoi solo sapere se è andato devi aggiungere (info).acknowledged
-                #    e magari usare il risultato booleano per fare un controllo ad esempio se qualcosa va storto
-                #    e nel caso fargli re iniziare il login nella pagina con un redirect
                 save_info = collection.insert_one(info)
                 return redirect(url_for('login'))
         else:
