@@ -17,11 +17,12 @@ body {
 
 .form-control#text-form {
     background-color: rgb(255, 238, 139);
+    border: 1px solid var(--bs-dark);
 }
 
 .form-control:focus#text-form {
     background-color: rgb(255, 238, 139);
     border-color: var(--bs-warning);
     outline: 0;
-    box-shadow: 0 0 0 .25rem var(--bs-warning);
+    box-shadow: 0 0 0 .20rem var(--bs-warning);
 }
