@@ -96,6 +96,21 @@ def create():
     return render_template('CreateProject.html')
 
 
+# Submitted data route
+@app.route("/finalize/", methods=["POST"])
+@cross_origin()
+def finalize():
+    if request.method == "POST":
+        # @TODO: get_json non funziona più qui stranamnete ma nel caso passare ai
+        #   form.get
+        data = request.get_data()
+        print(data)
+        print("Data end")
+        return "200"
+    else:
+        abort(500)
+
+
 # user page
 @app.route("/user/")
 def user():
