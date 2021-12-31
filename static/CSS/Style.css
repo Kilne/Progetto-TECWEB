@@ -15,12 +15,12 @@ body {
     background-color: rgb(255, 238, 139);
 }
 
-.form-control#text-form {
+.form-control {
     background-color: rgb(255, 238, 139);
     border: 1px solid var(--bs-dark);
 }
 
-.form-control:focus#text-form {
+.form-control:focus {
     background-color: rgb(255, 238, 139);
     border-color: var(--bs-warning);
     outline: 0;
