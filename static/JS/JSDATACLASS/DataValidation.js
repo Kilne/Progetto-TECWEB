@@ -5,7 +5,11 @@ document.getElementById("Finalize").addEventListener("click", function (ev) {
     let form_aggreate = document.querySelectorAll(" div > input")
 
     form_aggreate.forEach(value => {
-        //    @TODO: manca solo prendere i valori dalla nodelist
+        if (value["value"] === "") {
+            alert("NO INPUT")
+        } else {
+            console.log("ok")
+        }
     })
 
 
