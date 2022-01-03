@@ -10,20 +10,33 @@
             Create your project here
         </h3>
     </div>
-    <form class="ms-sm-2" id="formZone">
+    <form class="ms-sm-2 mb-sm-auto" id="formZone">
         <div class="m-auto">
-            <label class="form-label text-warning h5" id="labelForm" for="Pname">
+            <label class="form-label text-warning h5" id="labelForm1" for="Pname">
                 Project Name:</label>
             <input class="form-control" id="Pname" type="text"
-                   aria-describedby="labelForm">
-            <label class="form-label text-warning h5" id="labelForm" for="Pobj">
+                   aria-describedby="labelForm1">
+            <label class="form-label text-warning h5" id="labelForm2" for="Pobj">
                 Project Objective:</label>
             <input class="form-control" id="Pobj" type="text"
-                   aria-describedby="labelForm">
-            <label class="form-label text-warning h5" id="labelForm" for="Ptotal">
+                   aria-describedby="labelForm2">
+            <label class="form-label text-warning h5" id="labelForm3" for="Ptotal">
                 Project Objective amount:</label>
             <input class="form-control" id="Ptotal" type="number"
-                   aria-describedby="labelForm">
+                   aria-describedby="labelForm3">
+            <label class="form-label text-warning h5" id="labelForm4" for="Pdate">
+                Project date objective:</label>
+            <input class="form-control" id="Pdate" type="date"
+                   aria-describedby="labelForm4">
+            <div class="form-check form-check-inline text-warning h5">
+                Project date objective:
+                <label class="form-check-label text-warning h5" id="labelForm5" for="Prate">
+                    1/Day</label>
+                <input class="form-check-input" id="Pdate" type="radio"
+                       aria-describedby="labelForm5" checked>
+                {#                @TODO finire i radio ed il form#}
+            </div>
+
         </div>
         <div class="mt-sm-5 m-auto">
             <button class="btn btn-warning text-dark" id="Finalize">

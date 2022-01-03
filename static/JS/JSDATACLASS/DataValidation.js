@@ -1,23 +1,19 @@
 document.getElementById("Finalize").addEventListener("click", function (ev) {
     ev.preventDefault()
-    //@TODO:validare e poi fare subimit all'url non mandare JSON poi ci pensa il backend
     let json_data = {};
-    let form_aggreate = document.querySelectorAll(" div > input")
+    let form_aggreate = document.querySelectorAll(" div > input").values()
 
-    form_aggreate.forEach(value => {
-        if (value["value"] === "") {
-            alert("NO INPUT")
-        } else {
-            console.log("ok")
-        }
+    for (const element of form_aggreate) {
+        json_data[element.id] = element.value
+        //    @TODO finito il form prepare i data validation
+    }
+
+    $.ajax({
+        url: "/finalize/",
+        method: "POST",
+        data: JSON.stringify(json_data),
+        content: "application/json"
     })
 
-
-    // $.ajax({
-    //     url: "/finalize/",
-    //     method: "POST",
-    //     data: JSON.stringify(json_data),
-    //     content: "application/json"
-    // })
 })
 
