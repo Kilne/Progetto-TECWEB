@@ -28,21 +28,31 @@
                 Project date objective:</label>
             <input class="form-control" id="Pdate" type="date"
                    aria-describedby="labelForm4">
-            <div class="form-check form-check-inline text-warning h5">
-                Project date objective:
-                <label class="form-check-label text-warning h5" id="labelForm5" for="Prate">
-                    1/Day</label>
-                <input class="form-check-input" id="Pdate" type="radio"
-                       aria-describedby="labelForm5" checked>
-                {#                @TODO finire i radio ed il form#}
+            <div class="row-cols-sm-auto row text-warning">
+                <div class="col-sm-auto col h5">
+                    Project saving/step rate:
+                </div>
             </div>
-
-        </div>
-        <div class="mt-sm-5 m-auto">
-            <button class="btn btn-warning text-dark" id="Finalize">
-                Finalize
-            </button>
-        </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                       value="1" checked>
+                <label class="form-check-label text-warning" for="inlineRadio1">1/Day</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                       value="7">
+                <label class="form-check-label text-warning" for="inlineRadio2">7/Week</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                       value="30">
+                <label class="form-check-label text-warning" for="inlineRadio3">1/Month</label>
+            </div>
+            <div class="my-sm-5 m-auto">
+                <button class="btn btn-warning text-dark" id="Finalize">
+                    Finalize
+                </button>
+            </div>
     </form>
 {% endblock %}
 

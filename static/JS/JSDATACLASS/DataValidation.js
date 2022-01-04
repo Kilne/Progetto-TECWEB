@@ -4,8 +4,15 @@ document.getElementById("Finalize").addEventListener("click", function (ev) {
     let form_aggreate = document.querySelectorAll(" div > input").values()
 
     for (const element of form_aggreate) {
+        if (element.hasAttribute("type").toString() === "radio") {
+            if (element.checked) {
+                // @TODO a quanto pare i radio devono scassare le palle
+                json_data["Prate"] = element.value;
+            } else {
+                continue;
+            }
+        }
         json_data[element.id] = element.value
-        //    @TODO finito il form prepare i data validation
     }
 
     $.ajax({
