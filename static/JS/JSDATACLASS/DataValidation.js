@@ -1,20 +1,17 @@
 document.getElementById("Finalize").addEventListener("click", function (ev) {
     ev.preventDefault()
     let json_data = {};
-    let form_aggreate = document.querySelectorAll(" div > input").values()
+    let input_forms = document.getElementsByClassName("form-control");
+    let radio_checked = $(".form-check-input")
 
-    for (const element of form_aggreate) {
-        if (element.hasAttribute("type").toString() === "radio") {
-            if (element.checked) {
-                // @TODO a quanto pare i radio devono scassare le palle
-                json_data["Prate"] = element.value;
-            } else {
-                continue;
-            }
-        }
-        json_data[element.id] = element.value
+    for (const inputFormsKey in input_forms) {
+        console.log("input:" + inputFormsKey.id)
     }
 
+    for (const radioCheckedKey in radio_checked) {
+        console.log("radio:" + radio_checked.id)
+    }
+    //@TODO uuuuuuuuuuuggggggggggggggggggggghhhhhhhhhhhhhhhhhhhhhhhhhhh
     $.ajax({
         url: "/finalize/",
         method: "POST",
