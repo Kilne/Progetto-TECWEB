@@ -15,12 +15,18 @@ body {
     background-color: rgb(255, 238, 139);
 }
 
-.form-control {
+#Pdate.form-control,
+#Pname.form-control,
+#Pobj.form-control,
+#Ptotal.form-control {
     background-color: rgb(255, 238, 139);
     border: 1px solid var(--bs-dark);
 }
 
-.form-control:focus {
+#Pdate.form-control:focus,
+#Pname.form-control:focus,
+#Pobj.form-control:focus,
+#Ptotal.form-control:focus {
     background-color: rgb(255, 238, 139);
     border-color: var(--bs-warning);
     outline: 0;

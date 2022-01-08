@@ -10,8 +10,8 @@
             Create your project here
         </h3>
     </div>
-    <form class="ms-sm-2 mb-sm-auto" id="formZone">
-        <div class="m-auto">
+    <div class="m-sm-4 p-2">
+        <form class="ms-sm-2 mb-sm-auto" id="formZone">
             <label class="form-label text-warning h5" id="labelForm1" for="Pname">
                 Project Name:</label>
             <input class="form-control" id="Pname" type="text"
@@ -33,27 +33,28 @@
                     Project saving/step rate:
                 </div>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline mx-sm-2">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                       value="1">
+                       value="1" checked>
                 <label class="form-check-label text-warning" for="inlineRadio1">1/Day</label>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline mx-sm-2">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
                        value="7">
                 <label class="form-check-label text-warning" for="inlineRadio2">7/Week</label>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline mx-sm-2">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
                        value="30">
                 <label class="form-check-label text-warning" for="inlineRadio3">1/Month</label>
             </div>
-            <div class="my-sm-5 m-auto">
+            <div class="my-sm-5">
                 <button class="btn btn-warning text-dark" id="Finalize">
                     Finalize
                 </button>
             </div>
-    </form>
+        </form>
+    </div>
 {% endblock %}
 
 
@@ -62,8 +63,6 @@
 {% endblock %}
 
 {% block scriptJS %}
-    <script src="../static/JS/JSDATACLASS/DataValidation.js" type="application/javascript">
-
-    </script>
+    <script src="../static/JS/JSDATACLASS/DataValidation.js" type="application/javascript"></script>
+    <script src="../static/JS/JSUTILSFORSITE/CheckMover.js"></script>
 {% endblock %}
-{#@TODO:aggiugnere e testare lo script#}

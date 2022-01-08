@@ -4,14 +4,8 @@ document.getElementById("Finalize").addEventListener("click", function (ev) {
     let input_forms = document.getElementsByClassName("form-control");
     let radio_checked = $(".form-check-input")
 
-    for (const inputFormsKey in input_forms) {
-        console.log("input:" + inputFormsKey.id)
-    }
+    // @TODO ok CheckMover.js muove l'attrivuto checked per i radio , basta prender quello e dargli il value
 
-    for (const radioCheckedKey in radio_checked) {
-        console.log("radio:" + radio_checked.id)
-    }
-    //@TODO uuuuuuuuuuuggggggggggggggggggggghhhhhhhhhhhhhhhhhhhhhhhhhhh
     $.ajax({
         url: "/finalize/",
         method: "POST",
